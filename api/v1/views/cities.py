@@ -16,6 +16,7 @@ from api.v1.views import app_views
 from flask import jsonify, abort, request, make_response
 from models import storage
 from models.city import City
+from models.state import State
 
 
 @app_views.route('/states/<string:state_id>/cities', methods=['GET'],
@@ -32,7 +33,7 @@ def all_cities_in_a_state_route(state_id):
 
 
 @app_views.route('/cities/<string:city_id>', methods=['GET'],
-                 strict_slashes=False)
+                  strict_slashes=False)
 def city_route(city_id):
     """
     Retrive city object by City ID

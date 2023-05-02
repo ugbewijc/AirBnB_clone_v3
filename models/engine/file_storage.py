@@ -84,9 +84,10 @@ class FileStorage:
         Returns the number of objects in storage matching the given class.
         If no class is passed, returns the count of all objects in storage
         """
+        data = self.all(cls)
         if cls in classes.values():
-            return len(self.all(cls))
-        return len(self.all())
+            data = self.all(cls)
+        return len(data)
 
     def close(self):
         """call reload() method for deserializing the JSON file to objects"""
