@@ -19,7 +19,7 @@ def status_route():
     """
     Return status = ok in json format
     """
-    return jsonify(status="ok")
+    return jsonify(status="OK")
 
 
 @app_views.route('/stats', strict_slashes=False)
